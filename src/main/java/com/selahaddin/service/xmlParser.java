@@ -206,6 +206,7 @@ public class xmlParser {
             JSONObject planObject = js.getJSONObject("plan");
             int item_lengh = planObject.getJSONArray("itineraries").length();
             for (int s = 0; s < item_lengh; s++) {
+                firstStartTime=0;
                 fare = 0.0;
                 transfer_count = 1;
                 JSONArray legsItems = planObject.getJSONArray("itineraries").getJSONObject(s).getJSONArray("legs");
@@ -263,7 +264,7 @@ public class xmlParser {
 
         }
         if (json.length() < 5) {
-            json = "json ";
+            json = "lütfen otp yi calistiriniz!!! ";
         }
         return json;
     }
